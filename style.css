@@ -1,13 +1,24 @@
-div#header {
-    height: 5em;
-    width: fit-content;
+* {
     margin: auto;
 }
 
+body {
+    background-color: rgb(180, 252, 255);
+}
+
+h1 {
+    text-align: center;
+    padding-top: 5px;
+}
+
+div.buttons {
+    height: 5em;
+    width: fit-content;
+}
+
 div#container {
-    width: 40em;
-    height: 40em;
-    margin: auto;
+    width: 36em;
+    height: 36em;
     border-radius: 2%;
     padding: 1em;
     background-color: black;
@@ -18,16 +29,15 @@ div#container {
 }
 
 div.item {
-    margin: auto;
     background-color: white;
     height: 100%;
     width: 100%;
 }
 
-input#clear {
+input {
     margin: 1.5em;
     height: 2em;
-    width: 15em;
+    width: 10em;
     font: 15px sans-serif;
     border-radius: 1em;
     outline: none;
@@ -35,6 +45,10 @@ input#clear {
     border: 3px solid black;
 }
 
-input#clear:hover {
+input#clearbtn {
+    width: 15em;
+}
+
+input:hover {
     background-color: rgb(230, 230, 230);
 }

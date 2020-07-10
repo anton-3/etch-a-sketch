@@ -1,8 +1,9 @@
 const container = document.querySelector('div#container');
 let gridSize = 16;
 appendItems();
+let items = document.querySelectorAll('div.item');
 
-const clearButton = document.querySelector('input#clear');
+const clearButton = document.querySelector('input#clearbtn');
 clearButton.addEventListener('click', () => {
     promptGridSize();
     removeItems(); // remove all divs in container
@@ -19,7 +20,6 @@ function promptGridSize() {
 }
 
 function removeItems() {
-    const items = document.querySelectorAll('div.item');
     items.forEach((item) => {
         item.remove();
     });
@@ -39,7 +39,7 @@ function appendItems() {
 }
 
 function clearGrid() {
-    const items = document.querySelectorAll('div.item');
+    items = document.querySelectorAll('div.item');
     items.forEach((item) => {
         item.style.backgroundColor = 'white';
     });

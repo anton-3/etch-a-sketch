@@ -2,19 +2,21 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link href="style.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" />
         <title>Etch-a-Sketch</title>
     </head>
 
     <body>
-        <div id="header">
-            <input
-                type="button"
-                id="clear"
-                value="Clear and change grid size"
-            />
+        <h1>Etch-a-Sketch</h1>
+        <div class="buttons">
+            <input type="button" id="clearbtn" value="Clear and change grid size" />
         </div>
         <div id="container"></div>
+        <div class="buttons">
+            <input type="button" id="blackbtn" value="Black" />
+            <input type="button" id="colorfulbtn" value="Colorful" />
+            <input type="button" id="spraybtn" value="Spray" />
+        </div>
 
         <script src="script.js"></script>
     </body>
