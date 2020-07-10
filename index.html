@@ -2,49 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <link href="style.css" rel="stylesheet">
         <title>Etch-a-Sketch</title>
-        <style>
-            div#header {
-                height: 5em;
-                width: fit-content;
-                margin: auto;
-            }
-
-            div#container {
-                width: 40em;
-                height: 40em;
-                margin: auto;
-                border-radius: 2%;
-                padding: 1em;
-                background-color: black;
-                display: grid;
-                grid-template-rows: repeat(16, 1fr);
-                grid-template-columns: repeat(16, 1fr);
-                gap: 1px 1px;
-            }
-
-            div.item {
-                margin: auto;
-                background-color: white;
-                height: 100%;
-                width: 100%;
-            }
-
-            input#clear {
-                margin: 1.5em;
-                height: 2em;
-                width: 15em;
-                font: 15px sans-serif;
-                border-radius: 1em;
-                outline: none;
-                background-color: white;
-                border: 3px solid black;
-            }
-
-            input#clear:hover {
-                background-color: rgb(230, 230, 230);
-            }
-        </style>
     </head>
 
     <body>
@@ -57,60 +16,6 @@
         </div>
         <div id="container"></div>
 
-        <script>
-            const container = document.querySelector('div#container');
-            let gridSize = 16;
-            appendItems();
-
-            const clearButton = document.querySelector('input#clear');
-            clearButton.addEventListener('click', () => {
-                promptGridSize();
-                removeItems(); // remove all divs in container
-                updateGridTemplate();
-                appendItems(); // reappend divs in container with new grid size
-                clearGrid();
-            });
-
-            function promptGridSize() {
-                gridSize = +prompt('Enter grid size:', '16');
-                while (!checkPositiveInt(gridSize)) {
-                    gridSize = +prompt('Enter grid size:', '16');
-                }
-            }
-
-            function removeItems() {
-                const items = document.querySelectorAll('div.item');
-                items.forEach((item) => {
-                    item.remove();
-                });
-            }
-
-            function updateGridTemplate() {
-                container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
-                container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-            }
-
-            function appendItems() {
-                for (let i = 1; i <= gridSize ** 2; i++) {
-                    const item = document.createElement('div');
-                    item.classList = 'item';
-                    container.appendChild(item);
-                }
-            }
-
-            function clearGrid() {
-                const items = document.querySelectorAll('div.item');
-                items.forEach((item) => {
-                    item.style.backgroundColor = 'white';
-                });
-            }
-
-            function checkPositiveInt(num) {
-                if (typeof num !== 'number') return false;
-                if (num <= 0) return false;
-                if (Math.floor(num) !== num) return false;
-                return true;
-            }
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>

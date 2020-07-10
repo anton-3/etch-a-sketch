@@ -1,0 +1,40 @@
+div#header {
+    height: 5em;
+    width: fit-content;
+    margin: auto;
+}
+
+div#container {
+    width: 40em;
+    height: 40em;
+    margin: auto;
+    border-radius: 2%;
+    padding: 1em;
+    background-color: black;
+    display: grid;
+    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(16, 1fr);
+    gap: 1px 1px;
+}
+
+div.item {
+    margin: auto;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+input#clear {
+    margin: 1.5em;
+    height: 2em;
+    width: 15em;
+    font: 15px sans-serif;
+    border-radius: 1em;
+    outline: none;
+    background-color: white;
+    border: 3px solid black;
+}
+
+input#clear:hover {
+    background-color: rgb(230, 230, 230);
+}
